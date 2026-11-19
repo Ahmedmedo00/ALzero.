@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK for Convert Currency </title>
+    <link rel="stylesheet" href="zero.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+    <nav>
+        <div id="logo">
+            <img src="imges/my_logo.gif" alt="" id="photo">
+            <p>For Currency Converter</p>
+        </div>
+        
+        <div id="icon">
+
+            <a href="#" id="i_home" onclick="Home()">
+                <i class="fas fa-home"></i>
+                Home
+            </a>
+            <a href="#" id="i_apout" onclick="apout()">
+                <i class="fas fa-circle-info"></i>
+                About
+            </a>
+            <a href="#" id="i_contact" onclick="contact()">
+                <i class="fas fa-envelope"></i>
+                Contact
+            </a>
+
+        </div>
+    </nav>
+
+
+
+
+    <main id="main">
+            <div id="head">
+                <p >Convert your <span>Currency</span> easily</p>
+                <span>Get accurate and real-time exchange rates <br>for all major currencies.</span>
+                <div id="fast">
+                     <i class="fas fa-solid fa-bolt"></i>
+                     Fast • Accurate • Reliable
+                </div>    
+            </div>
+
+            <div id="convert">
+                <form action=""> 
+                    <div id="form_from">
+                        <p>from</p>
+                        <select name="currency" id="currency_from" onchange="get_prices()">
+                            <option value="" selected disabled>Choose Currency</option>
+                            <option value="USD">🇺🇸 US Dollar (USD)</option>
+                            <option value="EUR">🇪🇺 Euro (EUR)</option>
+                            <option value="GBP">🇬🇧 British Pound (GBP)</option>
+                            <option value="AED">🇦🇪 UAE Dirham (AED)</option>
+                            <option value="EGP">🇪🇬 Egyptian Pound (EGP)</option>
+
+                            <option value="KWD">🇰🇼 Kuwaiti Dinar (KWD)</option>
+                            <option value="QAR">🇶🇦 Qatari Riyal (QAR)</option>
+                            <option value="BHD">🇧🇭 Bahraini Dinar (BHD)</option>
+                            <option value="OMR">🇴🇲 Omani Rial (OMR)</option>
+                            <option value="JOD">🇯🇴 Jordanian Dinar (JOD)</option>
+                            <option value="IQD">🇮🇶 Iraqi Dinar (IQD)</option>
+                            <option value="MAD">🇲🇦 Moroccan Dirham (MAD)</option>
+                            <option value="TND">🇹🇳 Tunisian Dinar (TND)</option>
+                            <option value="DZD">🇩🇿 Algerian Dinar (DZD)</option>
+                            <option value="LBP">🇱🇧 Lebanese Pound (LBP)</option>
+
+                            <option value="CNY">🇨🇳 Chinese Yuan (CNY)</option>
+                            <option value="JPY">🇯🇵 Japanese Yen (JPY)</option>
+                            <option value="KRW">🇰🇷 South Korean Won (KRW)</option>
+                            <option value="INR">🇮🇳 Indian Rupee (INR)</option>
+                            <option value="PKR">🇵🇰 Pakistani Rupee (PKR)</option>
+                            <option value="BDT">🇧🇩 Bangladeshi Taka (BDT)</option>
+                            <option value="IDR">🇮🇩 Indonesian Rupiah (IDR)</option>
+                            <option value="MYR">🇲🇾 Malaysian Ringgit (MYR)</option>
+                            <option value="SGD">🇸🇬 Singapore Dollar (SGD)</option>
+                            <option value="THB">🇹🇭 Thai Baht (THB)</option>
+                            <option value="PHP">🇵🇭 Philippine Peso (PHP)</option>
+                            <option value="VND">🇻🇳 Vietnamese Dong (VND)</option>
+                            <option value="HKD">🇭🇰 Hong Kong Dollar (HKD)</option>
+                            <option value="TWD">🇹🇼 Taiwan Dollar (TWD)</option>
+
+                            <option value="CAD">🇨🇦 Canadian Dollar (CAD)</option>
+                            <option value="AUD">🇦🇺 Australian Dollar (AUD)</option>
+                            <option value="NZD">🇳🇿 New Zealand Dollar (NZD)</option>
+                            <option value="MXN">🇲🇽 Mexican Peso (MXN)</option>
+                            <option value="BRL">🇧🇷 Brazilian Real (BRL)</option>
+                            <option value="ARS">🇦🇷 Argentine Peso (ARS)</option>
+                            <option value="CLP">🇨🇱 Chilean Peso (CLP)</option>
+                            <option value="COP">🇨🇴 Colombian Peso (COP)</option>
+
+                            <option value="CHF">🇨🇭 Swiss Franc (CHF)</option>
+                            <option value="SEK">🇸🇪 Swedish Krona (SEK)</option>
+                            <option value="NOK">🇳🇴 Norwegian Krone (NOK)</option>
+                            <option value="DKK">🇩🇰 Danish Krone (DKK)</option>
+                            <option value="PLN">🇵🇱 Polish Zloty (PLN)</option>
+                            <option value="CZK">🇨🇿 Czech Koruna (CZK)</option>
+                            <option value="HUF">🇭🇺 Hungarian Forint (HUF)</option>
+                            <option value="RON">🇷🇴 Romanian Leu (RON)</option>
+                            <option value="TRY">🇹🇷 Turkish Lira (TRY)</option>
+                            <option value="RUB">🇷🇺 Russian Ruble (RUB)</option>
+                            <option value="UAH">🇺🇦 Ukrainian Hryvnia (UAH)</option>
+
+                            <option value="ZAR">🇿🇦 South African Rand (ZAR)</option>
+                            <option value="NGN">🇳🇬 Nigerian Naira (NGN)</option>
+                            <option value="KES">🇰🇪 Kenyan Shilling (KES)</option>
+                            <option value="GHS">🇬🇭 Ghanaian Cedi (GHS)</option>
+                            <option value="ETB">🇪🇹 Ethiopian Birr (ETB)</option>
+
+
+
+                        </select>
+                        <input type="number" name="value_from" id="value_from" onkeyup="get_prices()">
+                    </div>    
+                        <span id="icon_repalse" onclick="replase()">
+                            <i class="fa-solid fa-right-left"></i>
+                        </span>
+                    
+
+                    <div id="form_to">
+                        <p>to</p>
+                        <select name="currency" id="currency_to" onchange="get_prices()">
+                            <option value="" selected disabled>Choose Currency</option>
+                                                        <option value="USD">🇺🇸 US Dollar (USD)</option>
+                            <option value="EUR">🇪🇺 Euro (EUR)</option>
+                            <option value="GBP">🇬🇧 British Pound (GBP)</option>
+                            <option value="AED">🇦🇪 UAE Dirham (AED)</option>
+                            <option value="EGP">🇪🇬 Egyptian Pound (EGP)</option>
+
+                            <option value="SAR">🇸🇦 Saudi Riyal (SAR)</option>
+                            <option value="KWD">🇰🇼 Kuwaiti Dinar (KWD)</option>
+                            <option value="QAR">🇶🇦 Qatari Riyal (QAR)</option>
+                            <option value="BHD">🇧🇭 Bahraini Dinar (BHD)</option>
+                            <option value="OMR">🇴🇲 Omani Rial (OMR)</option>
+                            <option value="JOD">🇯🇴 Jordanian Dinar (JOD)</option>
+                            <option value="IQD">🇮🇶 Iraqi Dinar (IQD)</option>
+                            <option value="MAD">🇲🇦 Moroccan Dirham (MAD)</option>
+                            <option value="TND">🇹🇳 Tunisian Dinar (TND)</option>
+                            <option value="DZD">🇩🇿 Algerian Dinar (DZD)</option>
+                            <option value="LBP">🇱🇧 Lebanese Pound (LBP)</option>
+
+                            <option value="CNY">🇨🇳 Chinese Yuan (CNY)</option>
+                            <option value="JPY">🇯🇵 Japanese Yen (JPY)</option>
+                            <option value="KRW">🇰🇷 South Korean Won (KRW)</option>
+                            <option value="INR">🇮🇳 Indian Rupee (INR)</option>
+                            <option value="PKR">🇵🇰 Pakistani Rupee (PKR)</option>
+                            <option value="BDT">🇧🇩 Bangladeshi Taka (BDT)</option>
+                            <option value="IDR">🇮🇩 Indonesian Rupiah (IDR)</option>
+                            <option value="MYR">🇲🇾 Malaysian Ringgit (MYR)</option>
+                            <option value="SGD">🇸🇬 Singapore Dollar (SGD)</option>
+                            <option value="THB">🇹🇭 Thai Baht (THB)</option>
+                            <option value="PHP">🇵🇭 Philippine Peso (PHP)</option>
+                            <option value="VND">🇻🇳 Vietnamese Dong (VND)</option>
+                            <option value="HKD">🇭🇰 Hong Kong Dollar (HKD)</option>
+                            <option value="TWD">🇹🇼 Taiwan Dollar (TWD)</option>
+
+                            <option value="CAD">🇨🇦 Canadian Dollar (CAD)</option>
+                            <option value="AUD">🇦🇺 Australian Dollar (AUD)</option>
+                            <option value="NZD">🇳🇿 New Zealand Dollar (NZD)</option>
+                            <option value="MXN">🇲🇽 Mexican Peso (MXN)</option>
+                            <option value="BRL">🇧🇷 Brazilian Real (BRL)</option>
+                            <option value="ARS">🇦🇷 Argentine Peso (ARS)</option>
+                            <option value="CLP">🇨🇱 Chilean Peso (CLP)</option>
+                            <option value="COP">🇨🇴 Colombian Peso (COP)</option>
+
+                            <option value="CHF">🇨🇭 Swiss Franc (CHF)</option>
+                            <option value="SEK">🇸🇪 Swedish Krona (SEK)</option>
+                            <option value="NOK">🇳🇴 Norwegian Krone (NOK)</option>
+                            <option value="DKK">🇩🇰 Danish Krone (DKK)</option>
+                            <option value="PLN">🇵🇱 Polish Zloty (PLN)</option>
+                            <option value="CZK">🇨🇿 Czech Koruna (CZK)</option>
+                            <option value="HUF">🇭🇺 Hungarian Forint (HUF)</option>
+                            <option value="RON">🇷🇴 Romanian Leu (RON)</option>
+                            <option value="TRY">🇹🇷 Turkish Lira (TRY)</option>
+                            <option value="RUB">🇷🇺 Russian Ruble (RUB)</option>
+                            <option value="UAH">🇺🇦 Ukrainian Hryvnia (UAH)</option>
+
+                            <option value="ZAR">🇿🇦 South African Rand (ZAR)</option>
+                            <option value="NGN">🇳🇬 Nigerian Naira (NGN)</option>
+                            <option value="KES">🇰🇪 Kenyan Shilling (KES)</option>
+                            <option value="GHS">🇬🇭 Ghanaian Cedi (GHS)</option>
+                            <option value="ETB">🇪🇹 Ethiopian Birr (ETB)</option>
+
+                        </select>
+                            <input type="number" name="value_to" id="value_to" readonly>
+
+                    </div>
+                </form>
+                <button>Convert now</button>
+
+            </div>
+
+    </main>
+
+
+
+
+
+
+    <div id="cards">
+        <a href="#">
+            <i class="fas fa-star"></i>
+            <span>Popular Currencies</span>
+            
+        </a>
+
+        <button id="more" type="button"  onclick="see_more()">
+            see more
+            <i class="fas fa-chevron-down"></i>
+
+        </button>
+
+        
+
+        <div id="cu_cards" >
+
+            <div id="ca_egy">
+                <h1>EGP</h1>
+                <option value="EGP">&#x1F1EA;&#x1F1EC;</option>
+                <p>Egyptian Pound <span>1.000</span></p>
+                <img src="imges/blue.svg" alt="">
+            </div>
+
+            <div id="ca_usa">
+                <h1>USD</h1>
+                <option value="USD">&#x1F1FA;&#x1F1F8;</option>
+                <p>US Dollar <span>1.000</span></p>
+                <img src="imges/yellow.svg" alt="">
+            </div>
+
+            <div id="ca_uae">
+                <h1>AED</h1>
+                <option value="AED">&#x1F1E6;&#x1F1EA;</option>
+                <p>UAE Dirham <span>1.000</span></p>
+                <img src="imges/green.svg" alt="">
+            </div>
+
+            <div id="ca_saudi">
+                <h1>SAR</h1>
+                <option value="SAR">&#x1F1F8;&#x1F1E6;</option>
+                <p>Saudi Riyal <span>1.000</span></p>
+                <img src="imges/prowen.svg" alt="">
+            </div>
+
+            <div id="ca_eur" >
+                <h1>EUR</h1>
+                <option value="EUR">&#x1F1EA;&#x1F1FA;</option>
+                <p>Euro <span>1.000</span></p>
+                <img src="imges/green.svg" alt="">
+            </div>
+
+            <div id="ca_gbp" >
+                <h1>GBP</h1>
+                <option value="GBP">&#x1F1EC;&#x1F1E7;</option>
+                <p>British Pound <span>1.000</span></p>
+                <img src="imges/blue.svg" alt="">
+            </div>
+
+            
+
+                <div id="ca_cny" class="hiden">
+                    <h1>CNY</h1>
+                    <option value="CNY">&#x1F1E8;&#x1F1F3;</option>
+                    <p>Chinese Yuan <span>1.000</span></p>
+                    <img src="imges/yellow.svg" alt="">
+                </div>
+
+                <div id="ca_jpy" class="hiden">
+                    <h1>JPY</h1>
+                    <option value="JPY">&#x1F1EF;&#x1F1F5;</option>
+                    <p>Japanese Yen <span>1.000</span></p>
+                    <img src="imges/green.svg" alt="">
+                </div>
+
+                <div id="ca_cad" class="hiden">
+                    <h1>CAD</h1>
+                    <option value="CAD">&#x1F1E8;&#x1F1E6;</option>
+                    <p>Canadian Dollar <span>1.000</span></p>
+                    <img src="imges/prowen.svg" alt="">
+                </div>
+
+                <div id="ca_aud" class="hiden">
+                    <h1>AUD</h1>
+                    <option value="AUD">&#x1F1E6;&#x1F1FA;</option>
+                    <p>Australian Dollar <span>1.000</span></p>
+                    <img src="imges/blue.svg" alt="">
+                </div>
+
+                <div id="ca_inr" class="hiden">
+                    <h1>INR</h1>
+                    <option value="INR">&#x1F1EE;&#x1F1F3;</option>
+                    <p>Indian Rupee <span>1.000</span></p>
+                    <img src="imges/yellow.svg" alt="">
+                </div>
+
+                <div id="ca_chf" class="hiden">
+                    <h1>CHF</h1>
+                    <option value="CHF">&#x1F1E8;&#x1F1ED;</option>
+                    <p>Swiss Franc <span>1.000</span></p>
+                    <img src="imges/green.svg" alt="">
+                </div>
+
+                <div id="ca_try" class="hiden">
+                    <h1>TRY</h1>
+                    <option value="TRY">&#x1F1F9;&#x1F1F7;</option>
+                    <p>Turkish Lira <span>1.000</span></p>
+                    <img src="imges/prowen.svg" alt="">
+                </div>
+
+                <div id="ca_rub" class="hiden">
+                    <h1>RUB</h1>
+                    <option value="RUB">&#x1F1F7;&#x1F1FA;</option>
+                    <p>Russian Ruble <span>1.000</span></p>
+                    <img src="imges/blue.svg" alt="">
+                </div>
+
+                <div id="ca_krw" class="hiden">
+                    <h1>KRW</h1>
+                    <option value="KRW">&#x1F1F0;&#x1F1F7;</option>
+                    <p>South Korean Won <span>1.000</span></p>
+                    <img src="imges/yellow.svg" alt="">
+                </div>
+
+                <div id="ca_brl" class="hiden">
+                    <h1>BRL</h1>
+                    <option value="BRL">&#x1F1E7;&#x1F1F7;</option>
+                    <p>Brazilian Real <span>1.000</span></p>
+                    <img src="imges/green.svg" alt="">
+                </div>
+
+                <div id="ca_sgd" class="hiden">
+                    <h1>SGD</h1>
+                    <option value="SGD">&#x1F1F8;&#x1F1EC;</option>
+                    <p>Singapore Dollar <span>1.000</span></p>
+                    <img src="imges/prowen.svg" alt="">
+                </div>
+
+                <div id="ca_mad" class="hiden">
+                    <h1>MAD</h1>
+                    <option value="MAD">&#x1F1F2;&#x1F1E6;</option>
+                    <p>Moroccan Dirham <span>1.000</span></p>
+                    <img src="imges/blue.svg" alt="">
+                </div>
+
+                <div id="ca_kwd" class="hiden">
+                    <h1>KWD</h1>
+                    <option value="KWD">&#x1F1F0;&#x1F1FC;</option>
+                    <p>Kuwaiti Dinar <span>1.000</span></p>
+                    <img src="imges/yellow.svg" alt="">
+                </div>
+
+                <div id="ca_zar" class="hiden">
+                    <h1>ZAR</h1>
+                    <option value="ZAR">&#x1F1FF;&#x1F1E6;</option>
+                    <p>South African Rand <span>1.000</span></p>
+                    <img src="imges/green.svg" alt="">
+                </div>
+            
+
+           
+            
+
+
+        </div>
+
+    </div>
+
+    <div id="apout">
+        <h1>About This Project</h1>
+        <p>A simple and easy-to-use currency converter that helps you convert currencies around the world using real-time exchange rates </p>
+        <h2>Features</h2>
+
+        <ul>
+            <li>Convert between different currencies.</li>
+            <li>Get updated exchange rates.</li>
+            <li>Simple and user-friendly interface.</li>
+            <li>Fast and accurate conversion.</li>
+        </ul>
+        
+        
+        
+        
+
+
+    </div>
+
+    <div id="contact_us">
+
+        <div id="notfcation">
+        
+            <i class="fas fa-check">
+            
+            </i> Message Send Sccesfull
+         
+        </div>
+
+
+        
+        
+        <form action="" id="contact-form">
+            <h2>Send Us a Message</h2>
+
+            <label for="name">Your Name
+                <input type="text" name="name" id="name" placeholder="Enter your name..." required>
+            </label>
+
+            <label for="email">Your Email
+                <input type="email" name="email" id="email" placeholder="Enter your email..." required>
+            </label>
+
+            <label for="subject">Subject
+                <input type="text" name="title" id="subject" placeholder="What is your message about?" required>
+            </label>
+
+           <label for="message">Message
+        <textarea name="message" id="message"
+        placeholder="Write your message here..." required></textarea>
+    </label>
+
+            <button type="submit">Send</button>
+        </form>
+
+        
+
+    </div>
+
+   
+
+
+
+
+
+
+
+    <div id="navbar">
+        <img src="imges/my_logo.gif" alt="" id="llogo" >
+        <h1>Currency Converter</h1>
+        <p>|</p>
+        <p>Your Trusted Currency Converter</p>
+
+
+        <a href="https://www.facebook.com/share/1EoU89M3eJ/" id="fac" target="_blank">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a href="https://wa.me/qr/ZCXSWPBKIZCGF1" id="whats" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+       <a href="https://www.instagram.com/apou_aisha_1312?cplk=ZDA4c3YwaGM2OW9w" id="insta" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+       </a>
+        
+
+    </div>
+
+
+
+        
+
+    
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+
+    <script src="zero_test.js"></script>
+</body>
+</html>
